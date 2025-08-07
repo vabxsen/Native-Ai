@@ -26,7 +26,7 @@ def wishme():
     else:
         speak("Good Evening Boy!")
 
-    speak("Myself Jill. How can i assist you?")
+    speak("I Am Your Native AI. How can i assist you?")
 
 def takeCommand():
     """Takes voice input and returns string output."""
