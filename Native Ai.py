@@ -1,10 +1,13 @@
-import pyttsx3 #pip install pyttsx3
+# External Libraries / Modules -
+
+import pyttsx3  #pip install pyttsx3
 import datetime
-import speech_recognition as sr #pip install speechRecognition
-import wikipedia #pip inatall wikipedia
+import speech_recognition as sr  #pip install SpeechRecognition
+import wikipedia  #pip install wikipedia
 import webbrowser
 
-# Text-to-Speech Setup
+# Text-to-Speech Function Setup -
+
 def speak(audio):
     print(f"Speaking: {audio}")
     try:
@@ -17,6 +20,8 @@ def speak(audio):
     except Exception as e:
         print(f"Error in speak(): {e}")
 
+# Greeting function -
+
 def wishme():
     hour = int(datetime.datetime.now().hour)
     if 0 <= hour < 12:
@@ -25,11 +30,11 @@ def wishme():
         speak("Good Afternoon Boy!")
     else:
         speak("Good Evening Boy!")
+    speak("I Am Your Native AI. How can I assist you?")
 
-    speak("I Am Your Native AI. How can i assist you?")
+# Voice input / command function -
 
 def takeCommand():
-    """Takes voice input and returns string output."""
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
@@ -38,189 +43,73 @@ def takeCommand():
             audio = r.listen(source, timeout=5)
         except sr.WaitTimeoutError:
             print("Timeout while listening")
-            return "None"
+            return "none"
 
     try:
         print("Recognizing...")
         query = r.recognize_google(audio, language='en-in')
-        print(f"User said: {query}\n")
+        print(f"You said: {query}")
     except sr.UnknownValueError:
         print("Could not understand audio")
-        return "None"
+        return "none"
     except sr.RequestError:
         print("Network error")
-        return "None"
+        return "none"
 
-    return query
+    return query.lower()
 
-# MAIN PROGRAM
+# Main Program Entry Point -
+
 if __name__ == "__main__":
     wishme()
 
-    query = takeCommand().lower()
+    while True:
+        query = takeCommand()
+# Exit Commands -
+        if query == "none":
+            continue
 
-    if query == "none":
-        pass  # do nothing or speak("Sorry I didn't catch that.")
-    elif 'wikipedia' in query:
-        speak("Searching Wikipedia...")
-        query = query.replace("wikipedia", "").strip()
-        try:
-            results = wikipedia.summary(query, sentences=2)
-            print(f"Wikipedia Summary: {results}")
-            speak("According to Wikipedia")
-            speak(results[:300])
-        except wikipedia.exceptions.DisambiguationError:
-            speak("There are multiple results, please be more specific.")
-        except wikipedia.exceptions.PageError:
-            speak("Sorry, I couldn't find anything on that topic.")
-    elif 'open youtube' in query:
-        webbrowser.open("youtube.com")
-    elif 'open google' in query:
-        webbrowser.open("google.com")
-    elif 'time' in query:
-        strTime = datetime.datetime.now().strftime("%H:%M:%S")
-        speak(f"Sir, the time is {strTime}")
-    elif "open spotify" in query or "play music" in query:
-        webbrowser.open("spotify.com")
-    elif "open amazon" in query:
-        webbrowser.open("amazon.in")
-    elif "open instagram" in query:
-        webbrowser.open("instagram.com")
-    elif "open steam" in query:
-        webbrowser.open("store.steampowered.com")
-
-
-
-          # That's all with my small Ai program. 
-                  # Myself Vaibhav Sen
-
-
-
+        elif "close" in query or "exit" in query or "stop" in query:
+            speak("Goodbye Boy! Stopping the program.")
+            break
             
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Program for  Wikipedia Search -
+        
+        elif 'wikipedia' in query:
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia", "").strip()
+            try:
+                results = wikipedia.summary(query, sentences=2)
+                print(f"Wikipedia Summary: {results}")
+                speak("According to Wikipedia")
+                speak(results[:300])
+            except wikipedia.exceptions.DisambiguationError:
+                speak("There are multiple results, please be more specific.")
+            except wikipedia.exceptions.PageError:
+                speak("Sorry, I couldn't find anything on that topic.")
+                
+# Progran To Open Websites You Want -
+        
+        elif 'open youtube' in query:
+            webbrowser.open("https://youtube.com")
+        elif 'open google' in query:
+            webbrowser.open("https://google.com")
+        elif 'time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")
+        elif "open spotify" in query or "play music" in query:
+            webbrowser.open("https://spotify.com")
+        elif "open amazon" in query:
+            webbrowser.open("https://amazon.in")
+        elif "open instagram" in query:
+            webbrowser.open("https://instagram.com")
+        elif "open steam" in query:
+            webbrowser.open("https://store.steampowered.com")
+
+
+
+# -------------------------------------------------------
+# Thank you for using this voice assistant!
+# Created with passion and Python by Vaibhav Sen.
+# -------------------------------------------------------
 
