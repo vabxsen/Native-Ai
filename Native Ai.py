@@ -57,41 +57,38 @@ def takeCommand():
 if __name__ == "__main__":
     wishme()
 
-    if 1:
-        query = takeCommand().lower()
+    query = takeCommand().lower()
 
-        if query == "none":
-           
-         if 'wikipedia' in query:
-            speak("Searching Wikipedia...")
-            query = query.replace("wikipedia", "").strip()
-            try:
-                results = wikipedia.summary(query, sentences=2)
-                print(f"Wikipedia Summary: {results}")
-                speak("According to Wikipedia")
-                speak(results[:300])  # Prevents long or problematic strings
-            except wikipedia.exceptions.DisambiguationError:
-                speak("There are multiple results, please be more specific.")
-            except wikipedia.exceptions.PageError:
-                speak("Sorry, I couldn't find anything on that topic.")
+    if query == "none":
+        pass  # do nothing or speak("Sorry I didn't catch that.")
+    elif 'wikipedia' in query:
+        speak("Searching Wikipedia...")
+        query = query.replace("wikipedia", "").strip()
+        try:
+            results = wikipedia.summary(query, sentences=2)
+            print(f"Wikipedia Summary: {results}")
+            speak("According to Wikipedia")
+            speak(results[:300])
+        except wikipedia.exceptions.DisambiguationError:
+            speak("There are multiple results, please be more specific.")
+        except wikipedia.exceptions.PageError:
+            speak("Sorry, I couldn't find anything on that topic.")
+    elif 'open youtube' in query:
+        webbrowser.open("youtube.com")
+    elif 'open google' in query:
+        webbrowser.open("google.com")
+    elif 'time' in query:
+        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+        speak(f"Sir, the time is {strTime}")
+    elif "open spotify" in query or "play music" in query:
+        webbrowser.open("spotify.com")
+    elif "open amazon" in query:
+        webbrowser.open("amazon.in")
+    elif "open instagram" in query:
+        webbrowser.open("instagram.com")
+    elif "open steam" in query:
+        webbrowser.open("store.steampowered.com")
 
-        elif 'open youtube' in query:
-                webbrowser.open("youtube.com")
-        elif'open google' in query:
-                webbrowser.open("google.com")
-        elif'time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Sir,The time is{strTime}")
-        elif"open spotify" in query:
-            webbrowser.open("spotify.com")
-        elif"play music" in query:
-            webbrowser.open("spotify.com")
-        elif"open amazon" in query:
-            webbrowser.open("amazon.in")
-        elif"open instagram" in query:
-            webbrowser.open("instagram.com")
-        elif"open steam" in query:
-            webbrowser.open("store.steampowered.com")
 
 
           # That's all with my small Ai program. 
