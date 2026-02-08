@@ -128,9 +128,8 @@ This project is open-source and available under the MIT License.
 
 ## 👨‍💻 Author
 
-Your Name  
-B.Tech Computer Science & Design  
-GitHub: https://github.com/yourusername
+Vaibhav Sen  
+GitHub: https://github.com/vabxsen
 
 ---
 
