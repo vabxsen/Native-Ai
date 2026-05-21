@@ -6,13 +6,13 @@ A Python-based voice-controlled AI assistant that performs real-time speech reco
 
 ## 🚀 Features
 
-- 🎤 Real-time voice command recognition
-- 🔊 Text-to-speech audio responses
-- 🌐 Wikipedia search with spoken summary
-- ⏰ Time announcement
-- 🌍 Open websites via voice commands
-- 🎵 Quick access to Spotify, YouTube, Google, Amazon, Instagram, Steam
-- 🧠 Error handling for unclear speech or network issues
+- 🎤 Real-time voice command recognition.
+- 🔊 Text-to-speech audio responses.
+- 🌐 Wikipedia search with spoken summary.
+- ⏰ Time announcement.
+- 🌍 Open websites via voice commands.
+- 🎵 Quick access to Spotify, YouTube, Google, Amazon, Instagram, Steam.
+- 🧠 Error handling for unclear speech or network issues.
 - 🖥️ Continuous assistant loop until exit command
 
 ---
