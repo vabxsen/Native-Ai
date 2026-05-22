@@ -1,136 +1,270 @@
-# 🎙️ Voice-Controlled AI Desktop Assistant (Python)
+# README.md
 
-A Python-based voice-controlled AI assistant that performs real-time speech recognition and responds using text-to-speech. The assistant can search Wikipedia, open popular websites, tell the current time, and execute system tasks through natural voice commands. This project demonstrates practical implementation of speech processing, automation, and human-computer interaction.
 
----
+# 🎙️ Native AI
 
-## 🚀 Features
-
-- 🎤 Real-time voice command recognition.
-- 🔊 Text-to-speech audio responses.
-- 🌐 Wikipedia search with spoken summary.
-- ⏰ Time announcement.
-- 🌍 Open websites via voice commands.
-- 🎵 Quick access to Spotify, YouTube, Google, Amazon, Instagram, Steam.
-- 🧠 Error handling for unclear speech or network issues.
-- 🖥️ Continuous assistant loop until exit command
+A modern desktop voice assistant built with Python, featuring speech recognition, text-to-speech, system monitoring, Claude AI integration, and a sleek Tkinter-based GUI.
 
 ---
 
-## 🛠️ Technologies Used
+# ✨ Preview
 
-- Python 3
-- `pyttsx3` — offline text-to-speech engine
-- `SpeechRecognition` — voice input processing
-- `wikipedia` — information retrieval API
-- `datetime` — system time handling
-- `webbrowser` — browser automation
+Native AI is a lightweight personal assistant capable of:
+
+- 🎤 Voice interaction
+- 🌐 Opening websites
+- 🔎 Searching Google
+- 📚 Wikipedia summaries
+- 💻 System monitoring
+- 🤖 AI-powered responses using Claude
+- 🔊 Speech output with natural voice feedback
+
+Built using Python 3.12 and designed with a clean cyber-style desktop interface.
 
 ---
 
-## ⚙️ Installation
+# 🚀 Features
 
-### 1. Clone the repository
+## 🎙️ Voice Recognition
+- Real-time microphone input
+- Speech-to-text using Google Speech Recognition
+- Ambient noise adjustment
+- Automatic listening status indicators
+
+---
+
+## 🔊 Text-to-Speech
+- Natural voice responses using `pyttsx3`
+- Fast local speech synthesis
+- Offline TTS support
+
+---
+
+## 🤖 Claude AI Integration
+- Uses Anthropic Claude API as an intelligent fallback
+- Conversational responses
+- Lightweight AI assistant behavior
+
+---
+
+## 💻 System Monitoring
+
+Check:
+- ⚡ CPU usage
+- 🧠 RAM usage
+- 💾 Disk space
+- 🖥️ Operating system information
+
+---
+
+## 🧠 Smart Commands
+
+Supports commands like:
+
+
+Time
+Date
+Day
+Open youtube
+Open github
+Search artificial intelligence
+Wikipedia python programming
+System info
+Cpu usage
+Disk space
+Joke
+Calculator
+
+
+
+## 🖥️ Modern Desktop GUI
+- 🌑 Dark-themed interface
+- 📜 Live command logs
+- 📡 Status indicators
+- ⌨️ Keyboard shortcuts
+- ⚙️ Multithreaded listening system
+
+---
+
+# 🛠️ Technologies Used
+
+- 🐍 Python 3.12
+- 🪟 Tkinter
+- 🔊 pyttsx3
+- 🎤 SpeechRecognition
+- 📚 Wikipedia API
+- 🤖 Anthropic Claude API
+- 💻 psutil
+- 🌐 requests
+
+---
+
+# 📦 Installation
+
+## 1️⃣ Clone the Repository
+
+~~
+git clone https://github.com/vabxsen/Native-Ai.git
+cd Native-Ai
+~~
+
+---
+
+## 2️⃣ Install Dependencies
+
+``
+pip install pyttsx3 SpeechRecognition wikipedia requests psutil pyaudio
+
+``
+
+---
+
+# 🎧 PyAudio Installation (Windows)
+
+If PyAudio fails to install:
+
+## ✅ Option 1 — Recommended
+
+Download the correct `.whl` file for your Python version from:
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+
+Then install:
+
 ```bash
-git clone https://github.com/yourusername/voice-ai-assistant.git
-cd voice-ai-assistant
+pip install PyAudio-<version>.whl
 ```
 
-### 2. Install dependencies
-```bash
-pip install pyttsx3 SpeechRecognition wikipedia pyaudio
-```
+---
 
-> Note: If PyAudio installation fails:
-- Windows: install precompiled wheel from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
-- Then run:
+## ⚡ Option 2
+
 ```bash
-pip install PyAudio-filename.whl
+pip install pipwin
+pipwin install pyaudio
 ```
 
 ---
 
-## ▶️ Usage
+# 🔑 Claude API Setup
 
-Run the assistant:
+Open the source file and replace:
 
-```bash
-python assistant.py
+```python
+ANTHROPIC_API_KEY = "YOUR_API_KEY_HERE"
 ```
 
-Speak commands such as:
+with your actual API key:
 
-- “Wikipedia Albert Einstein”
-- “Open YouTube”
-- “Open Google”
-- “What is the time?”
-- “Open Spotify”
-- “Exit”
+```python
+ANTHROPIC_API_KEY = "sk-ant-xxxxxxxx"
+```
 
-The assistant will continue listening until you say **exit**, **close**, or **stop**.
+Get your API key from:
 
----
-
-## 🧠 How It Works
-
-1. Microphone captures voice input
-2. SpeechRecognition converts audio → text
-3. Assistant processes the command
-4. pyttsx3 converts response → speech
-5. Program executes requested action
-
-This loop runs continuously for real-time interaction.
+https://console.anthropic.com/
 
 ---
 
-## 🌍 Practical Applications
+# ▶️ Run the Assistant
 
-- Accessibility tools for visually impaired users
-- Hands-free productivity assistant
-- Smart home control prototype
-- Voice-based kiosk systems
-- Educational AI projects
-- Automation assistant for everyday tasks
+```bash
+python Native_Ai.py
+```
 
 ---
 
-## 🔮 Future Improvements
+# 📁 Project Structure
 
-- Add AI chatbot integration (LLMs)
-- Voice authentication
-- Desktop app launcher
-- Weather/news API integration
-- Smart home IoT control
-- GUI interface
-- Multi-language support
-- Wake-word detection
-
----
-
-## 📌 Learning Outcomes
-
-This project helped develop skills in:
-
-- Speech processing
-- API integration
-- Python automation
-- Error handling
-- Human-computer interaction
-- Real-time system design
+```bash
+Native-Ai/
+│
+├── Native_Ai.py
+├── README.md
+└── requirements.txt
+```
 
 ---
 
-## 📄 License
+# ⌨️ Keyboard Shortcuts
 
-This project is open-source and available under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-Vaibhav Sen  
-GitHub: https://github.com/vabxsen
+| Key | Action |
+|------|---------|
+| Space | 🎤 Start Listening |
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+# 🔮 Future Improvements
+
+Planned upgrades:
+
+- 🎧 Wake word detection
+- 🧠 Offline AI mode
+- 🖱️ Custom desktop automation
+- 📂 File management commands
+- 🎵 Spotify and Discord control
+- 🧬 AI memory system
+- 🤖 Better NLP intent detection
+- 🌦️ Weather integration
+- 📱 Mobile companion app
+
+---
+
+# 🔒 Security Note
+
+⚠️ Never upload your real API keys publicly.
+
+For production projects, use environment variables instead of hardcoded keys.
+
+Example:
+
+```python
+import os
+
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+```
+
+---
+
+# 👨‍💻 Author
+
+Developed by **Vaibhav Sen**
+
+### 🌐 GitHub
+https://github.com/vabxsen
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 🤝 Contributing
+
+Pull requests and feature suggestions are welcome.
+
+If you'd like to improve Native AI, feel free to fork the repository and submit a PR.
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of the GUI here.
+
+Example:
+
+```markdown
+![Native AI Screenshot](screenshot.png)<img width="920" height="831" alt="image" src="https://github.com/user-attachments/assets/d203cd54-7802-4814-92fe-c4859f95c6b1" />
+
+```
+
+---
+
+# ⭐ Support the Project
+
+If you found this project useful, consider giving the repository a star on GitHub.
+
+It helps the project grow and motivates future development 🚀
+````
