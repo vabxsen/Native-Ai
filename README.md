@@ -249,19 +249,7 @@ If you'd like to improve Native AI, feel free to fork the repository and submit 
 
 ---
 
-# 📸 Screenshots
 
-Add screenshots of the GUI here.
-
-Example:
-
-Markdown
-
-<img src="[https://github.com/user-attachments/assets/1367098e-49b4-4e94-8bf2-2b8cf1455648](https://github.com/user-attachments/assets/1367098e-49b4-4e94-8bf2-2b8cf1455648)" width="920" alt="Native AI Screenshot">
-
-
-
----
 
 # ⭐ Support the Project
 
