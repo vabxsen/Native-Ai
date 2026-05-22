@@ -256,7 +256,7 @@ Add screenshots of the GUI here.
 Example:
 
 ```markdown
-<img src="https://github.com/user-attachments/assets/YOUR_IMAGE_ID" width="920" alt="Native AI Screenshot">
+<img src="https://github.com/user-attachments/assets/1367098e-49b4-4e94-8bf2-2b8cf1455648" width="920" alt="Native AI Screenshot">
 
 ```
 
